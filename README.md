@@ -178,3 +178,26 @@ function range(int1, int2) {
   return output;
 }
 ```
+
+### Challenge: 07-reverseUpcaseString
+
+**Difficulty:** Basic
+
+Prompt:
+
+> Write a function called reverseUpcaseString that accepts a single string argument, then returns the string with its characters in reverse orderand converts all characters to uppercase.
+
+Examples:
+
+reverseUpcaseString("SEI Rocks!"); --> "!SKCOR IES" 
+
+```javascript
+function reverseUpcaseString(string) {
+  let reversed = "";
+  for (let i = string.length; i >= 0; i--) {
+      let currentChar = string.charAt(i);
+      reversed += currentChar;
+  }
+  return reversed.toUpperCase();
+}
+```
