@@ -31,8 +31,11 @@ If either argument is not a Number, return the value of NaN.
 Examples:
 
 > addTwoNumbers(5, 10) //=> 15
+> 
 > addTwoNumbers(10, -2) //=> 8
+> 
 > addTwoNumbers(0, 0) //=> 0
+> 
 > addTwoNumbers('Hello', 5) //=> NaN
 
 ```javascript
