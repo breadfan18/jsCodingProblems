@@ -4,8 +4,7 @@
 Difficulty: Basic
 
 Prompt:
-
-Write a function called addOne that takes a single number as an argument and returns that number plus 1.
+> Write a function called addOne that takes a single number as an argument and returns that number plus 1.
 
 Examples:
 
@@ -26,7 +25,7 @@ Difficulty: Basic
 
 Prompt:
 
-Write a function called addTwoNumbers that accepts two numeric arguments and returns the sum of those two numbers.
+> Write a function called addTwoNumbers that accepts two numeric arguments and returns the sum of those two numbers.
 If either argument is not a Number, return the value of NaN.
 
 Examples:
@@ -53,8 +52,7 @@ Difficulty: Basic
 
 Prompt:
 
-- Write a function called sumNumbers that accepts a single array of numbers and returns the sum of the numbers in the array.
-- If the array is empty, return 0 (zero).
+> Write a function called sumNumbers that accepts a single array of numbers and returns the sum of the numbers in the array. If the array is empty, return 0 (zero).
 
 Examples:
 
@@ -81,9 +79,7 @@ Difficulty: Basic
 
 Prompt:
 
-- Write a function called addList that accepts any quantity of numbers as arguments, adds them together and returns the resulting sum.
-- Assume all parameters will be numbers.
-- If called with no arguments, return 0 (zero).
+> Write a function called addList that accepts any quantity of numbers as arguments, adds them together and returns the resulting sum. Assume all parameters will be numbers. If called with no arguments, return 0 (zero).
 
 Examples:
 
@@ -108,10 +104,10 @@ Difficulty: Basic
 
 Prompt:
 
-- Write a function named computeRemainder that accepts two numeric arguments and returns the remainder of the division of those two numbers.
-- The first argument should be the dividend and the second argument should be the divisor.
-- If a 0 is passed in as the second argument you should return JavaScript's special numeric value: Infinity.
-- For extra fun, complete this challenge without using the modulus (%) operator.
+> Write a function named computeRemainder that accepts two numeric arguments and returns the remainder of the division of those two numbers.
+> The first argument should be the dividend and the second argument should be the divisor.
+> If a 0 is passed in as the second argument you should return JavaScript's special numeric value: Infinity.
+> For extra fun, complete this challenge without using the modulus (%) operator.
 
 Examples:
 
