@@ -9,6 +9,7 @@ Prompt:
 Examples:
 
 > addOne(1) --> 2
+> 
 > addOne(-5) --> -4
 
 ```javascript
@@ -59,9 +60,12 @@ Prompt:
 
 Examples:
 
-> sumNumbers([10]) --> 10
+> sumNumbers([10]) --> 10 
+> 
 > sumNumbers([5, 10]) --> 15
+> 
 > sumNumbers([2, 10, -5]) --> 7
+> 
 > sumNumbers([]) --> 0
 
 ```javascript
@@ -86,7 +90,9 @@ Prompt:
 Examples:
 
 > add(1) --> 1
+> 
 > add(1,50,1.23) --> 52.23
+> 
 > add(7,-12) --> -5
 
 ```javascript
@@ -114,7 +120,9 @@ Prompt:
 Examples:
 
 > computeRemainder(10,2) --> 0
+> 
 > computeRemainder(4,0) --> Infinity
+> 
 > computeRemainder(10.5, 3) --> 1.5
 
 ```javascript
