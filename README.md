@@ -8,8 +8,8 @@ Prompt:
 
 Examples:
 
-> addOne(1) //=> 2
-> addOne(-5) //=> -4
+> addOne(1) --> 2
+> addOne(-5) --> -4
 
 ```javascript
 function addOne(num) {
@@ -30,13 +30,13 @@ If either argument is not a Number, return the value of NaN.
 
 Examples:
 
-> addTwoNumbers(5, 10) //=> 15
+> addTwoNumbers(5, 10) --> 15
 > 
-> addTwoNumbers(10, -2) //=> 8
+> addTwoNumbers(10, -2) --> 8
 > 
-> addTwoNumbers(0, 0) //=> 0
+> addTwoNumbers(0, 0) --> 0
 > 
-> addTwoNumbers('Hello', 5) //=> NaN
+> addTwoNumbers('Hello', 5) --> NaN
 
 ```javascript
 function addTwoNumbers(num1, num2) {
@@ -59,10 +59,10 @@ Prompt:
 
 Examples:
 
-> sumNumbers([10]) //=> 10
-> sumNumbers([5, 10]) //=> 15
-> sumNumbers([2, 10, -5]) //=> 7
-> sumNumbers([]) //=> 0
+> sumNumbers([10]) --> 10
+> sumNumbers([5, 10]) --> 15
+> sumNumbers([2, 10, -5]) --> 7
+> sumNumbers([]) --> 0
 
 ```javascript
 function sumNumbers(numbers) {
@@ -85,9 +85,9 @@ Prompt:
 
 Examples:
 
-> add(1) //=> 1
-> add(1,50,1.23) //=> 52.23
-> add(7,-12) //=> -5
+> add(1) --> 1
+> add(1,50,1.23) --> 52.23
+> add(7,-12) --> -5
 
 ```javascript
 function addList() {
@@ -113,9 +113,9 @@ Prompt:
 
 Examples:
 
-> computeRemainder(10,2) //=> 0
-> computeRemainder(4,0) //=> Infinity
-> computeRemainder(10.5, 3) //=> 1.5
+> computeRemainder(10,2) --> 0
+> computeRemainder(4,0) --> Infinity
+> computeRemainder(10.5, 3) --> 1.5
 
 ```javascript
 function computeRemainder(num1, num2) {
@@ -146,13 +146,13 @@ Prompt:
 
 Examples:
 
-> range(1,4) //=> [1,2,3]
+> range(1,4) --> [1,2,3]
 > 
-> range(-2, 3) //=> [-2,-1,0,1,2]
+> range(-2, 3) --> [-2,-1,0,1,2]
 > 
-> range(1,1) //=> []
+> range(1,1) --> []
 > 
-> range(5,2) //=> "First argument must be less than second"
+> range(5,2) --> "First argument must be less than second"
 > 
 
 ```javascript
