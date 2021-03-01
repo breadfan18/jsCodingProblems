@@ -225,7 +225,7 @@ Examples:
 > 
 > removeEnds('a'); --> "" (empty string)
 
-```javascirpt
+```javascript
 function removeEnds(string) {
   if (string.length < 3) return "";
   else return string.substring(1, string.length-1);
