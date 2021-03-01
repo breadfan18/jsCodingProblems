@@ -142,6 +142,14 @@ function computeRemainder(num1, num2) {
   }
   return output;
 }
+
+//OR Simpler Solution
+
+function computeRemainder(num1, num2) {
+  if (num2 === 0) return Infinity;
+  return  num1 - (Math.floor(num1/num2) * num2);
+}
+
 ```
 ### Challenge: 06-range
 
