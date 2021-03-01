@@ -118,18 +118,17 @@ Examples:
 ```javascript
 function computeRemainder(num1, num2) {
   let output = 0;
-  if(num2 === 0){
-    output =  Infinity;
+  if (num2 === 0) {
+      output = Infinity;
   } else {
-    //Find remainder without using the modulus operator...
-    let counter = 1;
-    while (num2*counter <= num1){
-      if ((num1 - (num2*counter)) < num2) {
-        break;
-    }else counter++;
-
-    }
-    output = num1 - (num2*counter);
+      //Find remainder without using the modulus operator...
+      let counter = 1;
+      while (num2 * counter <= num1) {
+          if ((num1 - (num2 * counter)) < num2) {
+              break;
+          } else counter++;
+      }
+      output = num1 - (num2 * counter);
   }
   return output;
 }
