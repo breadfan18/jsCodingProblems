@@ -136,9 +136,12 @@ function computeRemainder(num1, num2) {
     //Find remainder without using the modulus operator...
     let counter = 1;
     while (num2*counter <= num1){
-      counter++;
+      if ((num1 - (num2*counter)) < num2) {
+        break;
+    }else counter++;
+
     }
-    output = num1 - (num2*(counter-1));
+    output = num1 - (num2*counter);
   }
   return output;
 }
