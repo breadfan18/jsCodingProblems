@@ -39,7 +39,7 @@ addTwoNumbers(0, 0) //=> 0
 addTwoNumbers('Hello', 5) //=> NaN
 -----------------------------------------------------------------*/
 // Your solution for 02-addTwoNumbers here:
-```
+```javascript
 function addTwoNumbers(num1, num2) {
   // return num1 === NaN || num2 === NaN ? NaN : num1+num2;
   if (num1 === NaN || num2 === NaN){
@@ -70,7 +70,7 @@ sumNumbers([]) //=> 0
 -----------------------------------------------------------------*/
 // Your solution for 03-sumNumbers here:
 
-```
+```javascript
 function sumNumbers(numbers) {
   let sum = 0;
   for (const number of numbers) {
@@ -98,7 +98,7 @@ add(1,50,1.23) //=> 52.23
 add(7,-12) //=> -5
 -----------------------------------------------------------------*/
 // Your solution for 04-addList here:
-```
+```javascript
 function addList() {
   let sum = 0;
   for (let i = 0; i < arguments.length; i++) {
@@ -127,7 +127,7 @@ computeRemainder(4,0) //=> Infinity
 computeRemainder(10.5, 3) //=> 1.5
 -----------------------------------------------------------------*/
 // Your solution for 05-computeRemainder:
-```
+```javascript
 function computeRemainder(num1, num2) {
   let output = 0;
   if(num2 === 0){
