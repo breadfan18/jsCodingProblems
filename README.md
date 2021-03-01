@@ -189,7 +189,7 @@ Prompt:
 
 Examples:
 
-reverseUpcaseString("SEI Rocks!"); --> "!SKCOR IES" 
+> reverseUpcaseString("SEI Rocks!"); --> "!SKCOR IES" 
 
 ```javascript
 function reverseUpcaseString(string) {
