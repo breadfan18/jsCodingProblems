@@ -1,4 +1,5 @@
 /*-----------------------------------------------------------------
+
 Challenge: 01-addOne
 
 Difficulty: Basic
@@ -22,6 +23,7 @@ function addOne(num) {
 
 
 /*-----------------------------------------------------------------
+
 Challenge: 02-addTwoNumbers
 
 Difficulty: Basic  
@@ -52,6 +54,7 @@ function addTwoNumbers(num1, num2) {
 
 
 /*-----------------------------------------------------------------
+
 Challenge: 03-sumNumbers
 
 Difficulty: Basic  
@@ -81,6 +84,7 @@ function sumNumbers(numbers) {
 ```
 
 /*-----------------------------------------------------------------
+
 Challenge: 04-addList
 
 Difficulty: Basic
@@ -109,6 +113,7 @@ function addList() {
 ```
 
 /*-----------------------------------------------------------------
+
 Challenge: 05-computeRemainder
 
 Difficulty: Basic
