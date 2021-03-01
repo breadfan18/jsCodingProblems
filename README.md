@@ -1,7 +1,7 @@
 
 ### Challenge: 01-addOne
 
-Difficulty: Basic
+**Difficulty:** Basic
 
 Prompt:
 > Write a function called addOne that takes a single number as an argument and returns that number plus 1.
@@ -21,7 +21,7 @@ function addOne(num) {
 
 ### Challenge: 02-addTwoNumbers
 
-Difficulty: Basic  
+**Difficulty:** Basic  
 
 Prompt:
 
@@ -48,7 +48,7 @@ function addTwoNumbers(num1, num2) {
 
 ### Challenge: 03-sumNumbers
 
-Difficulty: Basic  
+**Difficulty:** Basic  
 
 Prompt:
 
@@ -75,7 +75,7 @@ function sumNumbers(numbers) {
 
 ### Challenge: 04-addList
 
-Difficulty: Basic
+**Difficulty:** Basic
 
 Prompt:
 
@@ -100,7 +100,7 @@ function addList() {
 
 ### Challenge: 05-computeRemainder
 
-Difficulty: Basic
+**Difficulty:** Basic
 
 Prompt:
 
