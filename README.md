@@ -14,7 +14,7 @@ addOne(-5) //=> -4
 -----------------------------------------------------------------*/
 // Your solution for 01-addOne here:
 
-```
+```ruby
 function addOne(num) {
   return num+=1;
 }
