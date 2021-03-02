@@ -260,4 +260,49 @@ function charCount(string) {
 }
 ```
 
+### Challenge: 10-formatWithPadding
+
+**Difficulty:** Basic
+
+Prompt:
+
+> Write a function called formatWithPadding that accepts three arguments:
+  > A numeric argument (an integer) representing the number to format.
+  > A string argument (a single character) representing the character used to "pad" the returned string to a minimum length.
+  > Another numeric argument (an integer) representing the length to "pad" the returned string to.
+> The function should return the integer as a string, "left padded" to the length of the 3rd arg using the character provided in the 2nd arg.
+> If the length of the integer converted to a string is equal or greater than the 3rd argument, no padding is needed > just return the integer as a string.
+
+Examples:
+
+> formatWithPadding(123, '0', 5); --> "00123"
+>
+> formatWithPadding(42, '*', 10); --> "********42"
+>
+> formatWithPadding(1234, '*', 3); --> "1234"/
+
+```javascript
+function formatWithPadding(int, string, paddingLength) {
+    let output = "";
+    let intString = int.toString();
+    let intStringArr = [...intString];
+    console.log(intStringArr);
+    intString.length >= paddingLength ? output = intString : runIt();
+
+    function runIt() {
+
+        console.log(output);
+        let timesToLoop = paddingLength - intString.length;
+        for (let i = 0; i < timesToLoop; i++) {
+            intStringArr.unshift(string);      
+        }
+        for (let i = 0; i < intStringArr.length; i++) {
+            const element = intStringArr[i];
+            output += element;
+            
+        }
+    }
+    return output;
+}
+```
 
