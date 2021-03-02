@@ -41,10 +41,7 @@ Examples:
 
 ```javascript
 function addTwoNumbers(num1, num2) {
-  // return num1 === NaN || num2 === NaN ? NaN : num1+num2;
-  if (num1 === NaN || num2 === NaN){
-    return NaN; 
-  }else return num1+num2;
+  return (typeof num1 === 'number' && typeof num2 === 'number') ? num1+num2 : NaN;
 }
 ```
 
@@ -231,3 +228,5 @@ function removeEnds(string) {
   else return string.substring(1, string.length-1);
 }
 ```
+
+
