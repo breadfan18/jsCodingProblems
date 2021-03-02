@@ -283,26 +283,21 @@ Examples:
 
 ```javascript
 function formatWithPadding(int, string, paddingLength) {
-    let output = "";
-    let intString = int.toString();
-    let intStringArr = [...intString];
-    console.log(intStringArr);
-    intString.length >= paddingLength ? output = intString : runIt();
+  let output = "";
+  let intString = int.toString();
+  let intStringArr = [...intString];
+  intString.length >= paddingLength ? output = intString : runIt();
 
-    function runIt() {
-
-        console.log(output);
-        let timesToLoop = paddingLength - intString.length;
-        for (let i = 0; i < timesToLoop; i++) {
-            intStringArr.unshift(string);      
-        }
-        for (let i = 0; i < intStringArr.length; i++) {
-            const element = intStringArr[i];
-            output += element;
-            
-        }
-    }
-    return output;
+  function runIt() {
+      let timesToLoop = paddingLength - intString.length;
+      for (let i = 0; i < timesToLoop; i++) {
+          intStringArr.unshift(string);      
+      }
+      for (let i = 0; i < intStringArr.length; i++) {
+          output+= intStringArr[i];
+      }
+  }
+  return output;
 }
 ```
 
