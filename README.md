@@ -283,7 +283,6 @@ Examples:
 
 ```javascript
 function formatWithPadding(int, string, paddingLength) {
-  let output = "";
   let intString = int.toString();
   let intStringArr = [...intString];
   intString.length >= paddingLength ? output = intString : runIt();
@@ -293,13 +292,39 @@ function formatWithPadding(int, string, paddingLength) {
       for (let i = 0; i < timesToLoop; i++) {
           intStringArr.unshift(string);      
       }
-      for (let i = 0; i < intStringArr.length; i++) {
-          output+= intStringArr[i];
-      }
-  }
-  return output;
+    }
+  return intStringArr.join("");
 }
 ```
+
+### Challenge: 11-isPalindrome
+
+**Difficulty:** Intermediate
+
+Prompt:
+
+> Write a function called isPalindrome that accepts a single string argument, then returns true or false depending upon whether or not the string is a palindrome.
+> A palindrome is a word or phrase that are the same forward or backward.
+> Casing and spaces are not included when considering whether or not a string is a palindrome.
+> If the length of the string is 0 or 1, return true.
+
+Examples:
+
+> isPalindrome('SEI Rocks'); --> false
+
+> isPalindrome('rotor'); --> true
+
+> isPalindrome('A nut for a jar of tuna'); --> true
+
+> isPalindrome(''); --> true
+
+```javascript
+
+
+```
+
+
+
 
 ### Challenge: 12-hammingDistance
 
