@@ -362,3 +362,65 @@ function hammingDistance(string1, string2) {
   return counter;
 }
 ```
+
+### Challenge: 13-mumble
+
+**Difficulty:** Intermediate
+
+Prompt:
+
+> Write a function called mumble that accepts a single string argument.
+> The function should return a string that has each character repeated the number of times according to its position within the string arg.  In addition, each repeated section of characters should be separated by a hyphen (-).
+> Examples describe it best..
+
+Examples:
+
+> mumble('X'); --> 'X'
+
+> mumble('abc'); --> 'a-bb-ccc'
+
+> mumble('121'); --> '1-22-111'
+
+> mumble('!A 2'); --> '!-AA>   -2222'
+
+```javascript
+function mumble(string) {
+  let output = "";
+  for (let i = 0; i < string.length; i++) {
+      const element = string[i];
+      const elementPosition = i+1;
+      for (let i = 0; i < elementPosition; i++) {
+          output+= element ;
+      }   
+      if(i !== string.length-1) output += "-";       
+  }
+
+  return output;
+}
+```
+
+### Challenge: 14-fromPairs
+
+**Difficulty:** Intermediate
+
+Prompt:
+
+> Write a function named fromPairs that creates an object from an array containing nested arrays.
+> Each nested array will have two elements representing key/value pairs used to create key/value pairs in an object to be returned by the function.
+> If a key appears in multiple pairs, the rightmost pair should overwrite previous the previous entry in the object.
+
+Examples:
+
+> fromPairs([ ['a', 1], ['b', 2], ['c', 3] ]) --> { a: 1, b: 2, c: 3 }
+
+> fromPairs([ ['name', 'Sam"], ['age', 24], ['name', 'Sally'] ]) --> { name: "Sally", age: 24 }
+
+```javascript
+function fromPairs(myArr) {
+  let newObj = {};
+  for (const arr of myArr) {
+      newObj[arr[0]] = arr[1];
+  }
+  return newObj;
+}
+```
