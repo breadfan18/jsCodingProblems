@@ -322,7 +322,7 @@ Examples:
 > isPalindrome(''); --> true
 
 ```javascript
-//Using regex which replaces all spaces and special characters with nothing..so only alphabets and numbers will be left. That way phrases will be evaluated as well for palindronism
+//Using regex to normalize the original string (replace all special characters and white space with "nothing"). That way phrases will be evaluated as well for palindromism
 function isPalindrome(string) {
   string = string.toLowerCase().replace(/[^a-z0-9]+/g, "");
   return string === string.split("").reverse().join("");
