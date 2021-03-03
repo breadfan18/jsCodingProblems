@@ -447,7 +447,7 @@ Examples:
 Using the ... spread operator so that we can consume any number of objects as parameters
 In a for loop, started iteration with i = 1. We want to skip index 0, because we want to merge
 all the objects starting from the second object to the first one. 
-Inside the loop, used the Object.assign() method to merge all properties from the second object onwards to the first object
+Inside the loop, used the Object.assign(target, source) method to merge all properties from the second object onwards to the first object
 This way automatically ensures that if there's already a key in the first object, then the value is updated to the later values from the later parameters.   
 */
 function mergeObjects(...objects) {
