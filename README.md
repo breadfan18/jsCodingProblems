@@ -424,3 +424,36 @@ function fromPairs(myArr) {
   return newObj;
 }
 ```
+
+### Challenge: 15-mergeObjects
+
+**Difficulty:**  Intermediate
+
+Prompt:
+
+> Write a function named mergeObjects that accepts at least two objects as arguments, merges the properties of the second through n objects into the first object, then finally returns the first object.
+> If any objects have the same property key, values from the object(s) later in the arguments list should overwrite earlier values.
+
+Examples:
+
+> mergeObjects({}, {a: 1});  --> {a: 1} (same object as first arg)
+
+> mergeObjects({a: 1, b: 2, c: 3}, {d: 4});  --> {a: 1, b: 2, c: 3, d: 4}
+
+> mergeObjects({a: 1, b: 2, c: 3}, {d: 4}, {b: 22, d: 44});  --> {a: 1, b: 22, c: 3, d: 44}
+
+```javascript
+/* 
+Using the ... spread operator so that we can consume any number of objects as parameters
+In a for loop, started iteration with i = 1. We want to skip index 0, because we want to merge
+all the objects starting from the second object to the first one. 
+Inside the loop, used the Object.assign() method to merge all properties from the second object onwards to the first object
+This way automatically ensures that if there's already a key in the first object, then the value is updated to the later values from the later parameters.   
+*/
+function mergeObjects(...objects) {
+  for (let i = 1; i < objects.length; i++) {
+      Object.assign(objects[0], objects[i]);
+  }
+ return objects[0];
+}
+```
