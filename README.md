@@ -533,7 +533,7 @@ function mapArray(arr, func) {
 
 Prompt:
 
-The goal is of this ### Challenge is to write a function that performs the functionality of JavaScript's Array.prototype.reduce method.
+The goal is of this challenge is to write a function that performs the functionality of JavaScript's Array.prototype.reduce method.
 
 > Write a function named reduceArray that accepts three arguments: (1) an array; (2) a callback function; and (3) a value used as the initial value of the "accumulator".
 > The reduceArray function should return whatever is returned by the callback function on the last iteration.
