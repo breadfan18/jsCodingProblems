@@ -1,56 +1,20 @@
 /*
-### Challenge: 16-findHighestPriced
+### Challenge: 22-intersection
 
-**Difficulty:**  Intermediate
+**Difficulty:** Intermediate
 
 Prompt:
 
-> Write a function named findHighestPriced that accepts a single array of objects.
-> The objects contained in the array are guaranteed to have a price property holding a numeric value.
-> The function should return the object in the array that has the largest value held in the price property.
-> If there's a tie between two or more objects, return the first of those objects in the array.
-> Return the original object, not a copy.
-> Do not mutate the array being passed in.
+> Write a function named intersection that accepts two arguments which are both arrays.  The array arguments may contain any mixture of strings, numbers and/or booleans > but no reference types, i.e., objects.
+> The function should return a new array containing all elements in common, including repeating element values.
+> The ordering of the elements in the returned is not important.
+> If there are no elements in the arrays in common,  the intersection function should return an empty array.
+> The function should not mutate (change) either argument.
 
 Examples:
 
-findHighestPriced([
-  { sku: 'a1', price: 25 },
-  { sku: 'b2', price: 5 },
-  { sku: 'c3', price: 50 },
-  { sku: 'd4', price: 10 }
-]);
---> { sku: 'c3', price: 50 }
-
-findHighestPriced([
-  { sku: 'a1', price: 25 },
-  { sku: 'b2', price: 50 },
-  { sku: 'c3', price: 50 },
-  { sku: 'd4', price: 10 }
-]);
---> { sku: 'b2', price: 50 }
+intersection(['a', 1], []) --> []
+intersection(['a', 1], [true, 'a', 15]) --> ['a']
+intersection([1, 'a', true, 1, 1], [true, 1, 'b', 1]) --> [1, true, 1]
 */
-// Your solution for 16-findHighestPriced here:
-function findHighestPrices(objects) {
-    let highest = 0;
-    objects.map((object) => {if (object.price > highest) highest = object.price;})
-    return objects.find(object => object.price === highest);
-}
-
-console.log(findHighestPrices([{
-        sku: 'a1',
-        price: 25
-    },
-    {
-        sku: 'b2',
-        price: 5
-    },
-    {
-        sku: 'c3',
-        price: 50
-    },
-    {
-        sku: 'd4',
-        price: 10
-    }
-]));
+// Your solution for 22-intersection here:
