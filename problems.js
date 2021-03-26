@@ -32,11 +32,10 @@ findHighestPriced([
 */
 // Your solution for 16-findHighestPriced here:
 function findHighestPrices(objects) {
-   let test = objects.map(function (object) {
-       
-   })
+    let highest = 0;
+    objects.map((object) => {if (object.price > highest) highest = object.price;})
+    return objects.find(object => object.price === highest);
 }
-
 
 console.log(findHighestPrices([{
         sku: 'a1',

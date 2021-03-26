@@ -488,9 +488,12 @@ Examples:
   { sku: 'd4', price: 10 }
 ]);
 --> { sku: 'b2', price: 50 }
+
 ```javascript
-function findHighestPrices(objects) {
-  
+function findHighestPriced(objects) {
+  let highest = 0;
+  objects.map((object) => {if (object.price > highest) highest = object.price;})
+  return objects.find(object => object.price === highest);
 }
 ```
 
