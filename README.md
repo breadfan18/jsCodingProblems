@@ -612,9 +612,13 @@ Prompt:
 Examples:
 
 > isPrime(2) --> true
+
 > isPrime(3) --> true
+
 > isPrime(4) --> false
+
 > isPrime(29) --> true
+
 > isPrime(200) --> false
 
 
