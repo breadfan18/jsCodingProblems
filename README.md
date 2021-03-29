@@ -623,11 +623,17 @@ Examples:
 
 
 ```javascript
+/* 
+For a number, we first check if it is an ingeter. IF NOT, return false
+Then we loop through the number and if at any point, the number divided by any iteration of `i` is equal to 0, the number is not prime, so we return false
+If the number is not divisible by any of its i iterations, then we return 'num > 1' which means we return true as long as the number is greater than 1, 
+since prime numbers are always greater than 1. 
+*/
 function isPrime(num) {
     if(!Number.isInteger(num)) return false;
     for (let i = 2; i < num; i++) {
         if (num % i === 0) return false;
     }
-    return true;
+    return num > 1;
 }
 ```
