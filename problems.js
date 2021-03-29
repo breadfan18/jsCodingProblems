@@ -1,34 +1,44 @@
-/*
-### Challenge: 20-isPrime
 
-**Difficulty:** Intermediate
+/*
+### Challenge: 26-toCamelCase
+
+**Difficulty:**  Intermediate
 
 Prompt:
 
-> Write a function named isPrime that returns true when the integer argument passed to it is a prime number and false when the argument passed to 
-> it is not prime.
-> A prime number is a whole number (integer) greater than 1 that is evenly divisible by only itself.
+> Write a function called toCamelCase that accepts a single string as argument.
+> The toCamelCase function should return the string as camel-cased, removing each _ or > characters and capitalizing the character following the _ or -.
+> If the string argument does not contain a "_" or a "-", return the same string.
+
+Hints:
+
+> This is a great ### Challenge for using regular expressions combined with the String.replace method.
 
 Examples:
 
-isPrime(2) --> true
-isPrime(3) --> true
-isPrime(4) --> false
-isPrime(29) --> true
-isPrime(200) --> false
+toCamelCase( 'sei' ) // => 'sei'
+toCamelCase( 'sei-rocks' ) // => 'seiRocks'
+toCamelCase( 'banana_Turkey_potato' ) // => 'bananaTurkeyPotato'
+toCamelCase( 'Mama-mia' ) // => 'MamaMia'
+toCamelCase( 'A_b_c' ) // => 'ABC'
 */
-// Your solution for 20-isPrime here:
+// Your solution for 26-toCamelCase here:
 
-/* 
-To check if a number is prime, num  % 2 === 0, then return false
-*/
+function toCamelCase(str) {
+    let strSplit = str.split(/[\W_]/gi);
+    let finalArr = [];
 
-function isPrime(num) {
-    if(!Number.isInteger(num)) return false;
-    for (let i = 2; i < num; i++) {
-        if (num % i === 0) return false;
+    for (let i = 0; i < strSplit.length; i++) {
+        if (i === 0) finalArr.push(strSplit[i]);
+        else {finalArr.push(strSplit[i].charAt(0).toUpperCase() + strSplit[i].slice(1));};
     }
-    return true;
+
+    return finalArr.join('');
 }
 
-console.log(isPrime(12.333));
+
+console.log(toCamelCase('Mama-mia'));
+
+// let test = "swaroop";
+
+// console.log(test.charAt(0).toUpperCase() + test.slice(1));
