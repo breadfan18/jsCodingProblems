@@ -1,53 +1,23 @@
-
 /*
-### Challenge: 23-balancedBrackets
+### Challenge: 21-primeFactors
 
-**Difficulty:**  Intermediate
+**Difficulty:** Intermediate
 
 Prompt:
 
-> Write a function called balancedBrackets that accepts a single string as argument.
-> The input string is composed entirely of parentheses, brackets and/or curly braces, i.e.,  (), [] and/or {}. Referred to as "braces" from this point forward...
-> The balancedBraces function should return true if the string's braces are "balanced" and false if they are not.
-> The brackets are considered unbalanced if any closing bracket does not close the same type of opening bracket, ignoring already matched brackets between them.  Examples explain it best...
+> Now that you have solved the last challenge of determining if a whole number is prime, let's expand upon that concept to...
+> Write a function named primeFactors that accepts a whole number greater than one (1) as an argument and returns an array of that argument's prime factors.
+> The prime factors of a whole number are the prime numbers that, when multiplied together, equals the whole number.
+> If the argument provided is not greater than 1, or not a whole number, then primeFactors should return an empty array.
 
 Examples:
 
-balancedBrackets( '()' ) // => true
-balancedBrackets( '(]' ) // => false
-balancedBrackets( '[{}]' ) // => true
-balancedBrackets( '[(])' ) // => false
-balancedBrackets( '[({}[])]' ) // => true
+primeFactors(2) --> [2]
+primeFactors(3) --> [3]
+primeFactors(4) --> [2, 2]
+primeFactors(18) --> [2, 3, 3]
+primeFactors(29) --> [29]
+primeFactors(105) --> [3, 5, 7]
+primeFactors(200) --> [2, 2, 2, 5, 5]
 */
-// Your solution for 23-balancedBrackets here:
-function balancedBrackers(str) {
-    let map = {
-        '(': ')',
-        '[': ']',
-        '{': '}'
-    }
-
-    console.log(str.length /2);
-    if(str.length % 2 !== 0) return false;
-    // let isBalanced = false;
-    for (let i = 0; i < str.length/2; i++) {
-        console.log('IRERATION ' + i);
-        console.log(i, str.charAt(i));
-        console.log(i, str.charAt((str.length - i) - 1));
-
-
-
-        if (str.charAt(i) === str.charAt((str.length - i) - 1)) {
-            return true;
-        }
-        
-    }
-
-    return false;
-}
-
-console.log(balancedBrackers('[({}[])]'));
-
-let test = '[()]';
-
-console.log(test.charAt(test.length));
+// Your solution for 21-primeFactors here:
