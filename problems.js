@@ -1,44 +1,53 @@
 
 /*
-### Challenge: 26-toCamelCase
+### Challenge: 23-balancedBrackets
 
 **Difficulty:**  Intermediate
 
 Prompt:
 
-> Write a function called toCamelCase that accepts a single string as argument.
-> The toCamelCase function should return the string as camel-cased, removing each _ or > characters and capitalizing the character following the _ or -.
-> If the string argument does not contain a "_" or a "-", return the same string.
-
-Hints:
-
-> This is a great ### Challenge for using regular expressions combined with the String.replace method.
+> Write a function called balancedBrackets that accepts a single string as argument.
+> The input string is composed entirely of parentheses, brackets and/or curly braces, i.e.,  (), [] and/or {}. Referred to as "braces" from this point forward...
+> The balancedBraces function should return true if the string's braces are "balanced" and false if they are not.
+> The brackets are considered unbalanced if any closing bracket does not close the same type of opening bracket, ignoring already matched brackets between them.  Examples explain it best...
 
 Examples:
 
-toCamelCase( 'sei' ) // => 'sei'
-toCamelCase( 'sei-rocks' ) // => 'seiRocks'
-toCamelCase( 'banana_Turkey_potato' ) // => 'bananaTurkeyPotato'
-toCamelCase( 'Mama-mia' ) // => 'MamaMia'
-toCamelCase( 'A_b_c' ) // => 'ABC'
+balancedBrackets( '()' ) // => true
+balancedBrackets( '(]' ) // => false
+balancedBrackets( '[{}]' ) // => true
+balancedBrackets( '[(])' ) // => false
+balancedBrackets( '[({}[])]' ) // => true
 */
-// Your solution for 26-toCamelCase here:
-
-function toCamelCase(str) {
-    let strSplit = str.split(/[\W_]/gi);
-    let finalArr = [];
-
-    for (let i = 0; i < strSplit.length; i++) {
-        if (i === 0) finalArr.push(strSplit[i]);
-        else {finalArr.push(strSplit[i].charAt(0).toUpperCase() + strSplit[i].slice(1));};
+// Your solution for 23-balancedBrackets here:
+function balancedBrackers(str) {
+    let map = {
+        '(': ')',
+        '[': ']',
+        '{': '}'
     }
 
-    return finalArr.join('');
+    console.log(str.length /2);
+    if(str.length % 2 !== 0) return false;
+    // let isBalanced = false;
+    for (let i = 0; i < str.length/2; i++) {
+        console.log('IRERATION ' + i);
+        console.log(i, str.charAt(i));
+        console.log(i, str.charAt((str.length - i) - 1));
+
+
+
+        if (str.charAt(i) === str.charAt((str.length - i) - 1)) {
+            return true;
+        }
+        
+    }
+
+    return false;
 }
 
+console.log(balancedBrackers('[({}[])]'));
 
-console.log(toCamelCase('Mama-mia'));
+let test = '[()]';
 
-// let test = "swaroop";
-
-// console.log(test.charAt(0).toUpperCase() + test.slice(1));
+console.log(test.charAt(test.length));
