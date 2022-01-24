@@ -18,7 +18,7 @@ computeRemainder(10.5, 3) --> 1.5
 */
 // Your solution for 05-computeRemainder:
 function computeRemainder(num1, num2) {
-    
+    return num2 === 0 ? remainderNum = Infinity : num1 - (Math.floor((num1/num2))*num2)
 }
 
-console.log(computeRemainder(100, 50))
+console.log(computeRemainder(100, 22))

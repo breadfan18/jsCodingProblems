@@ -140,11 +140,10 @@ function computeRemainder(num1, num2) {
   return output;
 }
 
-//OR Simpler Solution
+//OR Simpler Solution using Math.floor
 
 function computeRemainder(num1, num2) {
-  if (num2 === 0) return Infinity;
-  return  num1 - (Math.floor(num1/num2) * num2);
+  return num2 === 0 ? remainderNum = Infinity : num1 - (Math.floor(num1/num2) * num2)
 }
 
 ```
