@@ -1,24 +1,24 @@
 /*
-### Challenge: 02-addTwoNumbers
+### Challenge: 05-computeRemainder
 
-**Difficulty:** Basic  
+**Difficulty:** Basic
 
 Prompt:
 
-Write a function called addTwoNumbers that accepts two numeric arguments and returns the sum of those two numbers.
-If either argument is not a Number, return the value of NaN.
+> Write a function named computeRemainder that accepts two numeric arguments and returns the remainder of the division of those two numbers.
+> The first argument should be the dividend and the second argument should be the divisor.
+> If a 0 is passed in as the second argument you should return JavaScript's special numeric value: Infinity.
+> For extra fun, complete this ### Challenge without using the modulus (%) operator.
 
 Examples:
 
-addTwoNumbers(5, 10) --> 15
-addTwoNumbers(10, -2) --> 8
-addTwoNumbers(0, 0) --> 0
-addTwoNumbers('Hello', 5) --> NaN
+computeRemainder(10,2) --> 0
+computeRemainder(4,0) --> Infinity
+computeRemainder(10.5, 3) --> 1.5
 */
-// Your solution for 02-addTwoNumbers here:
-
-function addTwoNumbers(num1, num2) {
-    return typeof(num1) === 'number' && typeof(num2) === 'number' ? num1 + num2 : NaN
+// Your solution for 05-computeRemainder:
+function computeRemainder(num1, num2) {
+    
 }
 
-console.log(addTwoNumbers('best', 'test'))
+console.log(computeRemainder(100, 50))
