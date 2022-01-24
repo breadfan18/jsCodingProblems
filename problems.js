@@ -17,3 +17,8 @@ addTwoNumbers('Hello', 5) --> NaN
 */
 // Your solution for 02-addTwoNumbers here:
 
+function addTwoNumbers(num1, num2) {
+    return typeof(num1) === 'number' && typeof(num2) === 'number' ? num1 + num2 : NaN
+}
+
+console.log(addTwoNumbers('best', 'test'))
