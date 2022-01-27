@@ -702,3 +702,23 @@ function toCamelCase(str) {
     return finalArr.join('');
   }
 ```
+
+### Challenge: LAST-multiply
+
+**Difficulty:**  Intermediate
+
+Prompt:
+
+> Write a function that multiplies two numbers without using the * operator
+
+```javascript 
+function multiply(num1, num2) {
+    // return ('i').repeat(num1).repeat(num2).length
+    let total = num1;
+    for (let i = 1; i < num2; i++) {
+        total += num1 
+    }
+    return total;
+}
+
+```
