@@ -17,8 +17,9 @@ computeRemainder(4,0) --> Infinity
 computeRemainder(10.5, 3) --> 1.5
 */
 // Your solution for 05-computeRemainder:
-function computeRemainder(num1, num2) {
-    return num2 === 0 ? remainderNum = Infinity : num1 - (Math.floor((num1/num2))*num2)
+function multiply(num1, num2) {
+    let total = 0;
 }
 
-console.log(computeRemainder(100, 22))
+console.log(multiply(2, 3))
+console.log('test');
