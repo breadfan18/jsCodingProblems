@@ -257,7 +257,29 @@ function charCount(string) {
   }
   return myObj;
 }
+
+//Another Solution 
+function charCount(string){
+  let output = {}
+
+  for (let i = 0; i < string.length; i++) {
+    const currentChar = string[i];
+    if(output[currentChar]) output[currentChar]++
+    else output[currentChar] = 1
+  }
+  return output;
+}
+
+//Probably the best solution using Array.reduce
+function charCount(str) {
+    return str.split('').reduce((allChars, char) => {
+        allChars[char] ? allChars[char]++ : allChars[char] = 1
+        return allChars;
+    }, {})
+}
 ```
+
+
 
 ### Challenge: 10-formatWithPadding
 

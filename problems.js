@@ -1,23 +1,27 @@
-/*
-  ### Challenge: 09-charCount
-  
-  **Difficulty:** Basic
-  
-  Prompt:
-  
-  > Write a function named charCount that accepts a single string argument and returns an object that represents the count of each character in the string.
-  > The returned object should have keys that represent the character with its value set to the how many times the character appears in the string argument.
-  > Upper and lower case characters should be counted separately.
-  > Space characters should be count too.
-  
-  Examples:
-  
-  charCount('hello') --> { h: 1, e: 1, l: 2, o: 1 }
-  charCount('Today is fantastic!') --> { T: 1, o: 1, d: 1, a: 3, y: 1, ' ': 2, i: 2, s: 2, f: 1, n: 1, t: 2, c: 1, '!': 1 }
-  */
-  // Your solution for 09-charCount here:
+/*-----------------------------------------------------------------
+Challenge: 10-formatWithPadding
 
-function charCount(str) {
+Difficulty: Basic
+
+Prompt:
+
+- Write a function called formatWithPadding that accepts three arguments:
+  - A numeric argument (an integer) representing the number to format.
+  - A string argument (a single character) representing the character used to "pad" the returned string to a minimum length.
+  - Another numeric argument (an integer) representing the length to "pad" the returned string to.
+- The function should return the integer as a string, "left padded" to the length of the 3rd arg using the character provided in the 2nd arg.
+- If the length of the integer converted to a string is equal or greater than the 3rd argument, no padding is needed - just return the integer as a string.
+
+Examples:
+
+formatWithPadding(123, '0', 5); //=> "00123"
+formatWithPadding(42, '*', 10); //=> "********42"
+formatWithPadding(1234, '*', 3); //=> "1234"
+-----------------------------------------------------------------*/
+// Your solution for 10-formatWithPadding here:
+
+
+function formatWithPadding(num, char, len) {
     return str.split('').reduce((allChars, char) => {
         allChars[char] ? allChars[char]++ : allChars[char] = 1
         return allChars;
@@ -25,5 +29,5 @@ function charCount(str) {
 }
 
 
-console.log(charCount('swaroop'))
+console.log(formatWithPadding('swaroop'))
 // console.log('test');
