@@ -20,9 +20,11 @@
   // Your solution for 11-isPalindrome here:
 
 function isPalindrome(str) {
-
+  const normalizedStr = str.toLowerCase().replaceAll(' ', '');
+  const reversedStr = normalizedStr.toLowerCase().split('').reverse().join('');
+  return normalizedStr === reversedStr;
 }
 
 
-console.log(isPalindrome('poop'))
+console.log(isPalindrome('poop poop'))
 // console.log('test');
