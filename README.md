@@ -258,7 +258,7 @@ function charCount(string) {
   return myObj;
 }
 
-//Another Solution 
+//Another Similar Solution 
 function charCount(string){
   let output = {}
 
