@@ -1,30 +1,39 @@
-  /*
-  ### Challenge: 11-isPalindrome
+/*
+  ### Challenge: 12-hammingDistance
   
   **Difficulty:** Intermediate
   
   Prompt:
   
-  > Write a function called isPalindrome that accepts a single string argument, then returns true or false depending upon whether or not the string is a palindrome.
-  > A palindrome is a word or phrase that are the same forward or backward.
-  > Casing and spaces are not included when considering whether or not a string is a palindrome.
-  > If the length of the string is 0 or 1, return true.
+  In information theory, the hamming distance refers to the count of the differences between two strings of equal length.  It is used in computer science for such things as implementing "fuzzy search"  capability.
+  
+  > Write a function named hammingDistance that accepts two arguments which are both strings of equal length.
+  > The function should return the count of the symbols (characters, numbers, etc.) at the same position within each string that are different.
+  > If the strings are not of the same length, the function should return NaN.
   
   Examples:
   
-  isPalindrome('SEI Rocks'); --> false
-  isPalindrome('rotor'); --> true
-  isPalindrome('A nut for a jar of tuna'); --> true
-  isPalindrome(''); --> true
+  hammingDistance('abc', 'abc'); --> 0
+  hammingDistance('a1c', 'a2c'); --> 1
+  hammingDistance('!!!!', '****'); --> 4
+  hammingDistance('abc', 'ab'); --> NaN
   */
-  // Your solution for 11-isPalindrome here:
+  // Your solution for 12-hammingDistance here:
 
-function isPalindrome(str) {
-  const normalizedStr = str.toLowerCase().replaceAll(' ', '');
-  const reversedStr = normalizedStr.toLowerCase().split('').reverse().join('');
-  return normalizedStr === reversedStr;
+function hammingDistance(a, b) {
+    // first, if the strings are not of the same length return NaN
+    if(a.length !== b.length) return NaN;
+    // if strings ARE of same length
+    // -- declare a counter variale to count differences. 
+    let counter = 0;
+    // -- loop thorugh the first string, comparing the charAt each index position to the charAt the same index position of the second string 
+    for (let i = 0; i < a.length; i++) {
+        // -- IF they are different, increase the counter
+        if(a.charAt(i) !== b.charAt(i)) counter++;
+    }
+    return counter;
 }
 
 
-console.log(isPalindrome('poop poop'))
+console.log(hammingDistance('!!!!', '***'))
 // console.log('test');
