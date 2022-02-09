@@ -15,7 +15,14 @@
   */
 
 function removeEnds(str) {
- 
+    //First handle the condition so if str.length < 3, return ''
+    if(str.length < 3) return '';
+    //Then we can use the substring method to return the part of string removing the first and last 
+    // so the substring will be str.substring(1, str.length-2)
+    return str.substring(1, str.length-1)
+    
+    
+
 }
 
 
