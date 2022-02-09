@@ -18,9 +18,10 @@
   // Your solution for 09-charCount here:
 
 function charCount(str) {
-
-
-
+    return str.split('').reduce((allChars, char) => {
+        allChars[char] ? allChars[char]++ : allChars[char] = 1
+        return allChars;
+    }, {})
 }
 
 
