@@ -319,6 +319,14 @@ function formatWithPadding(int, string, paddingLength) {
 
   return output;
 }
+
+// ************ Another Simple Solution *************
+function formatWithPadding(num, str, len) {
+    let lengthOfNum = num.toString().length;
+    if(lengthOfNum >= len) return num.toString();
+    return str.repeat(len-lengthOfNum) + num;
+}
+
 ```
 
 ### Challenge: 11-isPalindrome

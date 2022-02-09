@@ -21,13 +21,12 @@ formatWithPadding(1234, '*', 3); //=> "1234"
 // Your solution for 10-formatWithPadding here:
 
 
-function charCount(str) {
-    return str.split('').reduce((allChars, char) => {
-        allChars[char] ? allChars[char]++ : allChars[char] = 1
-        return allChars;
-    }, {})
+function formatWithPadding(num, str, len) {
+    let lengthOfNum = num.toString().length;
+    if(lengthOfNum >= len) return num.toString();
+    return str.repeat(len-lengthOfNum) + num;
 }
 
 
-console.log(charCount('swaroop'))
+console.log(formatWithPadding(123, '0', 5))
 // console.log('test');
