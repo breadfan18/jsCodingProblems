@@ -258,7 +258,7 @@ function charCount(string) {
   return myObj;
 }
 
-//Another Similar Solution 
+//************* Another Similar Solution *************
 function charCount(string){
   let output = {}
 
@@ -270,7 +270,7 @@ function charCount(string){
   return output;
 }
 
-//Probably the best solution using Array.reduce
+//************* Using Array.reduce ************* 
 function charCount(str) {
     return str.split('').reduce((allChars, char) => {
         allChars[char] ? allChars[char]++ : allChars[char] = 1
