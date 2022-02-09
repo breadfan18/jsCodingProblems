@@ -1,31 +1,23 @@
- /*
-  ### Challenge: 06-range
+  /*
+  ### Challenge: 08-removeEnds
   
-  **Difficulty:** basic
+  **Difficulty:** Basic
   
   Prompt:
   
-  > Write a function called range that accepts two integers as arguments and returns an array of integers starting with the first argument up to one less than the second argument.
-  > The range function must be called with the first argument less than or equal to the second argument, 
-  otherwise return the string "First argument must be less than second".
+  > Write a function called removeEnds that accepts a single string argument, then returns the a string with the first and last characters removed.
+  > If the length of the string argument is less than 3, return an empty string.
   
   Examples:
   
-  range(1,4) --> [1,2,3]
-  range(-2, 3) --> [-2,-1,0,1,2]
-  range(1,1) --> []
-  range(5,2) --> "First argument must be less than second"
+  > removeEnds('SEI Rocks!'); --> "DI Rocks"
+  > removeEnds('a'); --> "" (empty string)
   */
-  // Your solution for 06-range here:
 
-function range(a, b){
-    if(a >= b) return 'First argument must be less than second'
-    const arr = [];
-    for (let i = a; i < b; i++) {
-        arr.push(i)
-    }
-    return arr;
+function removeEnds(str) {
+ 
 }
 
-console.log(range(1,10))
+
+console.log(removeEnds('swaroop'))
 // console.log('test');
