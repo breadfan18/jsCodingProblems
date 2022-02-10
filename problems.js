@@ -1,36 +1,31 @@
-  /*
-  ### Challenge: 13-mumble
-  
-  **Difficulty:** Intermediate
-  
-  Prompt:
-  
-  > Write a function called mumble that accepts a single string argument.
-  > The function should return a string that has each character repeated the number of times according to its position within the string arg.  
-  > In addition, each repeated section of characters should be separated by a hyphen (-).
-  > Examples describe it best..
-  
-  Examples:
-  
-  mumble('X'); --> 'X'
-  mumble('abc'); --> 'a-bb-ccc'
-  mumble('121'); --> '1-22-111'
-  mumble('!A 2'); --> '!-AA>   -2222'
-  */
-  // Your solution for 13-mumble here:
+/*
+### Challenge: 14-fromPairs
+ 
+**Difficulty:** Intermediate
+ 
+Prompt:
+ 
+> Write a function named fromPairs that creates an object from an array containing nested arrays.
+> Each nested array will have two elements representing key/value pairs used to create key/value pairs in an object to be returned by the function.
+> If a key appears in multiple pairs, the rightmost pair should overwrite previous the previous entry in the object.
+ 
+Examples:
+ 
+fromPairs([ ['a', 1], ['b', 2], ['c', 3] ]) --> { a: 1, b: 2, c: 3 }
+fromPairs([ ['name', 'Sam"], ['age', 24], ['name', 'Sally'] ]) --> { name: "Sally", age: 24 }
+*/
+// Your solution for 14-fromPairs here:
 
-function mumble(str) {
-    // initialize an output variable, set it to empty string
-    let output = '';
-    // loop through input string, adding the char, repeated by the index number and concat it to output - separated by hyphen
-    for (let i = 0; i < str.length; i++) {
-        output += str.charAt(i).repeat(i+1).concat('-');
-    }
-    return output.slice(0, output.length-1)
+
+function fromPairs(arr) {
+    return arr.reduce((allValues, innerArr) => {
+        allValues[innerArr[0]] = innerArr[1]
+        return allValues
+    }, {})
 }
 
 
 
 
-console.log(mumble('boo'))
+console.log(fromPairs([['name', 'Sam'], ['age', 24], ['name', 'Sally']]))
 // console.log('test');

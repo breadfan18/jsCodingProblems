@@ -452,6 +452,15 @@ function fromPairs(myArr) {
   }
   return newObj;
 }
+
+// ********** Using reduce  *********
+function fromPairs(arr) {
+    return arr.reduce((allValues, innerArr) => {
+        allValues[innerArr[0]] = innerArr[1]
+        return allValues
+    }, {})
+}
+
 ```
 
 ### Challenge: 15-mergeObjects
