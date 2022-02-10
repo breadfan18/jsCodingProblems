@@ -1,39 +1,36 @@
-/*
-  ### Challenge: 12-hammingDistance
+  /*
+  ### Challenge: 13-mumble
   
   **Difficulty:** Intermediate
   
   Prompt:
   
-  In information theory, the hamming distance refers to the count of the differences between two strings of equal length.  It is used in computer science for such things as implementing "fuzzy search"  capability.
-  
-  > Write a function named hammingDistance that accepts two arguments which are both strings of equal length.
-  > The function should return the count of the symbols (characters, numbers, etc.) at the same position within each string that are different.
-  > If the strings are not of the same length, the function should return NaN.
+  > Write a function called mumble that accepts a single string argument.
+  > The function should return a string that has each character repeated the number of times according to its position within the string arg.  
+  > In addition, each repeated section of characters should be separated by a hyphen (-).
+  > Examples describe it best..
   
   Examples:
   
-  hammingDistance('abc', 'abc'); --> 0
-  hammingDistance('a1c', 'a2c'); --> 1
-  hammingDistance('!!!!', '****'); --> 4
-  hammingDistance('abc', 'ab'); --> NaN
+  mumble('X'); --> 'X'
+  mumble('abc'); --> 'a-bb-ccc'
+  mumble('121'); --> '1-22-111'
+  mumble('!A 2'); --> '!-AA>   -2222'
   */
-  // Your solution for 12-hammingDistance here:
+  // Your solution for 13-mumble here:
 
-function hammingDistance(a, b) {
-    // first, if the strings are not of the same length return NaN
-    if(a.length !== b.length) return NaN;
-    // if strings ARE of same length
-    // -- declare a counter variale to count differences. 
-    let counter = 0;
-    // -- loop thorugh the first string, comparing the charAt each index position to the charAt the same index position of the second string 
-    for (let i = 0; i < a.length; i++) {
-        // -- IF they are different, increase the counter
-        if(a.charAt(i) !== b.charAt(i)) counter++;
+function mumble(str) {
+    // initialize an output variable, set it to empty string
+    let output = '';
+    // loop through input string, adding the char, repeated by the index number and concat it to output - separated by hyphen
+    for (let i = 0; i < str.length; i++) {
+        output += str.charAt(i).repeat(i+1).concat('-');
     }
-    return counter;
+    return output.slice(0, output.length-1)
 }
 
 
-console.log(hammingDistance('!!!!', '***'))
+
+
+console.log(mumble('boo'))
 // console.log('test');
