@@ -33,7 +33,7 @@ findHighestPriced([
 // Your solution for 16-findHighestPriced here:
 
 function findHighestPriced(arr) {
-    return arr;
+   return arr.reduce((output, current) => output.price > current.price ? output : current)
 }
 
 
@@ -41,7 +41,7 @@ function findHighestPriced(arr) {
 
 console.log(findHighestPriced([
     { sku: 'a1', price: 25 },
-    { sku: 'b2', price: 5 },
+    { sku: 'b2', price: 50 },
     { sku: 'c3', price: 50 },
     { sku: 'd4', price: 10 }
   ]))

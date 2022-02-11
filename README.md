@@ -533,6 +533,11 @@ function findHighestPriced(objects) {
   objects.map((object) => {if (object.price > highest) highest = object.price;})
   return objects.find(object => object.price === highest);
 }
+
+// ********* Using .reduce() **********
+function findHighestPriced(arr) {
+   return arr.reduce((output, current) => output.price >= current.price ? output : current)
+}
 ```
 
 ### Challenge: 17-mapArray
