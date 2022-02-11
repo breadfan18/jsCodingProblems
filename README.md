@@ -563,12 +563,12 @@ Examples:
 } );
 --> ["1 > rose", "2 > tulip", "3 > daisy"]
 ```javascript
-function mapArray(arr, func) {
-  let newArr = [];
-  for (let i = 0; i < arr.length; i++) {
-    newArr.push(func(arr[i], i));
-  }
-  return newArr;
+function mapArray(arr, callback) {
+    let newArr = [];
+    arr.forEach((element, idx) => {
+        newArr.push(callback(element, idx))
+    });    
+    return newArr;
 }
 ```
 
