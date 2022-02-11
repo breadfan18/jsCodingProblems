@@ -1,44 +1,50 @@
   /*
-  ### Challenge: 17-mapArray
+  ### Challenge: 18-reduceArray
   
   **Difficulty:**  Intermediate
   
   Prompt:
   
-  The goal is of this ### Challenge is to write a function that performs the functionality of JavaScript's Array.prototype.map method.
-  
-  > Write a function named mapArray that accepts two arguments: a single array and a callback function.
-  > The mapArray function should return a new array of the same length as the array argument.
-  > The mapArray function should iterate over each element in the array (first arg).  For each iteration, invoke the 
-  > callback function (2nd arg), passing to it as arguments, the current element and its index.  
-  > Whatever is returned by the callback function should be included in the new array at the index of the current iteration.
+  > The goal is of this ### Challenge is to write a function that performs the functionality of JavaScript's Array.prototype.reduce method.
+  > Write a function named reduceArray that accepts three arguments: (1) an array; (2) a callback function; and (3) a value used 
+  > as the initial value of the "accumulator".
+  > The reduceArray function should return whatever is returned by the callback function on the last iteration.
+  > The reduceArray function should iterate over each element in the array (first arg).  For each iteration, 
+  > invoke the callback function (2nd arg), passing to it three arguments: (1) the "accumulator", 
+  > which is the value returned by the callback during the previous iteration; (2) the  current element; 
+  > and (3) the index of the current iteration.
+  > On the first iteration, provide the third argument provided to reduceArray as the first argument when invoking the callback, 
+  > then for subsequent iterations, provide the value returned by the callback during the previous iteration.
   
   Examples:
   
-  mapArray( [1, 2, 3], function(n) {
-    return n * 2;
-  } );
-  --> [2, 4, 6]  (a new array)
+  reduceArray( [1, 2, 3], function(acc, n) {
+    return acc + n;
+  }, 0);
+  --> 6
   
-  mapArray( ['rose', 'tulip', 'daisy'], function(f, i) {
-    return `${i + 1} > ${f}`;
-  } );
-  --> ["1 > rose", "2 > tulip", "3 > daisy"]
+  reduceArray( [1, 2, 3], function(acc, n, i) {
+    return acc + n + i;
+  }, 0);
+  --> 9
+  
+  reduceArray( ['Yes', 'No', 'Yes', 'Maybe'], function(acc, v) {
+    acc[v] = acc[v] ? acc[v] + 1 : 1;
+    return acc;
+  }, {} );
+  --> {"Yes": 2, "No": 1, "Maybe": 1}
   */
-  // Your solution for 17-mapArray here:
+  // Your solution for 18-reduceArray here:
 
-function mapArray(arr, callback) {
-    let newArr = [];
-    arr.forEach((element, idx) => {
-        newArr.push(callback(element, idx))
-    });    
-    return newArr;
+function reduceArray(arr, callback, accumulator) {
+    arr.forEach((element, i) => accumulator = callback(accumulator, element, i));
+    return accumulator;
 }
 
 
 
 
-console.log(mapArray(['rose', 'tulip', 'daisy'], function(f, i) {
-    return `${i + 1} > ${f}`;
-  }))
+console.log(reduceArray([1, 2, 3], function(acc, n) {
+    return acc + n;
+  }, 0))
 // console.log('test');

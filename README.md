@@ -603,12 +603,10 @@ Examples:
 --> {"Yes": 2, "No": 1, "Maybe": 1}
 
 ```javascript
-function reduceArray(arr, func, accumulator) {
-  for (let i = 0; i < arr.length; i++) {
-    accumulator = func(accumulator, arr[i], i); 
+  function reduceArray(arr, callback, accumulator) {
+    arr.forEach((element, i) => accumulator = callback(accumulator, element, i));
+    return accumulator;
   }
-  return accumulator;
-}
 ```
 
 ### Challenge: 19-flatten
