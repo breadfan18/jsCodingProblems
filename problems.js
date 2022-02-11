@@ -33,7 +33,7 @@ findHighestPriced([
 // Your solution for 16-findHighestPriced here:
 
 function findHighestPriced(arr) {
-   return arr.reduce((output, current) => output.price > current.price ? output : current)
+   return arr.reduce((output, obj) => output.price >= obj.price ? output : obj)
 }
 
 
