@@ -633,8 +633,29 @@ Examples:
 > flatten( [1, [2, [3, [4]]], 1, 'a', ['b', 'c']] );
 --> [1, 2, 3, 4, 1, 'a', 'b', 'c']
 ```javascript
-// Cheating with this one, by using the Array.prototype.flat() function
+function flatten(arr) {
+    let flattenedArr = [];
+    arr.forEach(element => {
+        if(Array.isArray(element)) {
+            // Array.concat is used to merge two or more arrays. 
+            flattenedArr = flattenedArr.concat(flatten(element))
+        }else flattenedArr.push(element)
+    });
+    return flattenedArr
+}
 
+// ***** Using the spread operetor for recursion ******
+function flatten(arr) {
+    let flattenedArr = [];
+    arr.forEach(element => {
+      // Using the spread operator that spreads the results of the array and pushes into the flattenedArr.
+      if(Array.isArray(element)) flattenedArr.push(...flatten(element))
+      else flattenedArr.push(element)
+    });
+    return flattenedArr;
+}
+
+// ****** Cheating with the .flat() function ******
 function flatten(arr) {
   return arr.flat(Infinity);
 }

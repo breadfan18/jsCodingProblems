@@ -26,12 +26,17 @@
   // Your solution for 19-flatten here:
 
 function flatten(arr) {
-
-
+    let flattenedArr = [];
+    arr.forEach(element => {
+        if(Array.isArray(element)) {
+            // Array.concat is used to merge two or more arrays. 
+            flattenedArr = flattenedArr.concat(flatten(element))
+        }else flattenedArr.push(element)
+    });
+    return flattenedArr
 }
 
 
 
-
-console.log(flatten([1, 2, 3]))
+console.log(flatten(  [1, [2, [3, [4]]], 1, 'a', ['b', 'c']]))
 // console.log('test');
