@@ -636,10 +636,9 @@ Examples:
 function flatten(arr) {
     let flattenedArr = [];
     arr.forEach(element => {
-        if(Array.isArray(element)) {
-            // Array.concat is used to merge two or more arrays. 
-            flattenedArr = flattenedArr.concat(flatten(element))
-        }else flattenedArr.push(element)
+      // Array.concat is used to merge two or more arrays. 
+        if(Array.isArray(element)) flattenedArr = flattenedArr.concat(flatten(element))
+        else flattenedArr.push(element)
     });
     return flattenedArr
 }
