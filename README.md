@@ -763,6 +763,15 @@ function toCamelCase(str) {
     }
     return finalArr.join('');
   }
+
+// ******* Using replace and callback ********
+
+function toCamelCase(str) {
+    //  regex /[_-]\w/g matches any two letter string that starts with _ or -. 
+    // Then we use the callback to replace the matched charaters with the upperCased char that is at index 1 of the match 
+    return str.replace(/[_-]\w/g, match => match.charAt(1).toUpperCase())
+}
+
 ```
 
 ### Challenge: LAST-multiply
