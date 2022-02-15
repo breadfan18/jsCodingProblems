@@ -1,33 +1,39 @@
+  /*
+  ### Challenge: 20-isPrime
+  
+  **Difficulty:** Intermediate
+  
+  Prompt:
+  
+  > Write a function named isPrime that returns true when the integer argument passed to it is a 
+  > prime number and false when the argument passed to it is not prime.
+  > A prime number is a whole number (integer) greater than 1 that is evenly divisible by only itself.
+  
+  Examples:
+  
+  isPrime(2) --> true
+  isPrime(3) --> true
+  isPrime(4) --> false
+  isPrime(29) --> true
+  isPrime(200) --> false
+  
+  */
 
-/*
-### Challenge: 26-toCamelCase
-
-**Difficulty:**  Intermediate
-
-Prompt:
-
-> Write a function called toCamelCase that accepts a single string as argument.
-> The toCamelCase function should return the string as camel-cased, removing each _ or - characters and 
-> capitalizing the character following the _ or -
-> If the string argument does not contain a "_" or a "-", return the same string.
-
-Hints:
-
-> This is a great ### Challenge for using regular expressions combined with the String.replace method.
-
-Examples:
-
-toCamelCase( 'sei' ) // => 'sei'
-toCamelCase( 'sei-rocks' ) // => 'seiRocks'
-toCamelCase( 'banana_Turkey_potato' ) // => 'bananaTurkeyPotato'
-toCamelCase( 'Mama-mia' ) // => 'MamaMia'
-toCamelCase( 'A_b_c' ) // => 'ABC'
-*/
-// Your solution for 26-toCamelCase here:
-function toCamelCase(str) {
-    return str.replace(/[_-]\w/g, match => match.charAt(1).toUpperCase())
+  
+  
+  // Your solution for 20-isPrime here:
+function isPrime(num) {
+    let isPrime = true;
+    if(num === 1) isPrime = false;
+    for (let i = 2; i < num; i++) {
+       if(num % i === 0){
+           isPrime = false;
+           break;
+       }
+    }
+    return isPrime > 1
 }
 
 
 
-console.log(toCamelCase('banana_Turkey_potato'))
+console.log(isPrime(200))

@@ -752,7 +752,7 @@ Examples:
 
 ```javascript
 function toCamelCase(str) {
-    //use a regular expression. '\W' matches all characters that are not ASCII letters and digits and _. Then we also match _ separately. g flag for global scope. 
+    // use a regular expression. '\W' matches all characters that are not ASCII letters and digits and _. Then we also match _ separately. g flag for global scope. 
     // Then the split funciton will create an array with just the words in the string. We then loop through the array to camelCase the strings and return the join. 
     let strSplit = str.split(/[\W_]/g);
     let finalArr = [];
