@@ -23,17 +23,14 @@
   
   // Your solution for 20-isPrime here:
 function isPrime(num) {
-    let isPrime = true;
-    if(num === 1) isPrime = false;
+    if(!Number.isInteger(num)) return false;
     for (let i = 2; i < num; i++) {
-       if(num % i === 0){
-           isPrime = false;
-           break;
-       }
+      if(num % i === 0) return false;
     }
-    return isPrime > 1
+
+    return num > 1
 }
 
 
 
-console.log(isPrime(200))
+console.log(isPrime(29))
