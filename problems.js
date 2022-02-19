@@ -1,37 +1,48 @@
 /*
-  ### Challenge: 24-isWinningTicket
-  
-  **Difficulty:**  Intermediate
-  
-  Prompt:
-  
-  > Write a function called isWinningTicket that accepts a single array an as argument.
-  > The input array represents a 'lottery ticket' consisting of one or more nested 2-value arrays.  
-  > The first value of a nested array will be a string, the second an integer.
-  > The isWinningTicket function should return true if all of the nested arrays have a character
-  > in the string whose numeric character code equals the integer (2nd value).
-  > If any of the nested arrays have a string where all of the character's character code 
-  > does not match the integer, then return false.
-  
-  Hints:
-  
-  > A character/string can be created from a character code using the String.fromCharCode() class method.
-  > A character within a string's character code can be obtained using the charCodeAt() string method.
-  
-  Examples:
-  
-  isWinningTicket( [ ['ABC', 65] ] ) // => true
-  isWinningTicket( [ ['ABC', 999], ['XY', 89] ] ) // => false
-  isWinningTicket( [ ['ABC', 66], ['dddd', 100], ['Hello', 108] ] ) // => true
-  isWinningTicket( [ ['ABC', 66], ['dddd', 15], ['Hello', 108] ] ) // => false
-  */
-  // Your solution for 24-isWinningTicket here:
-function isWinningTicket(arr) {
+### Challenge: 29-addChecker
+ 
+**Difficulty:**  Intermediate
+ 
+Prompt:
+ 
+> Write a function called addChecker that accepts two arguments.
+> The first argument is an array containing at least two integers.  The integers in the array 
+> are sorted in ascending order.
+> The second argument is an integer.
+> The addChecker function should return true if there are two integers in the array of integers 
+> (first argument) that when added together, equals the integer passed in as the second argument.
+> If there are no two integers in the array that sum up to equal the second argument,
+> addChecker should return false.
+ 
+Hint:
+ 
+> An efficient solution can leverage the the fact that the integers in the array are sorted.
+ 
+Examples:
+ 
+addChecker( [1, 2], 3 ) // => true
+addChecker( [-3, 2], 9 ) // => false
+addChecker( [10, 15, 16, 22], 32 ) // => true
+addChecker( [10, 15, 16, 22], 19 ) // => false
+*/
+// Your solution for 29-addChecker here:
+function addChecker(arr, int) {
+  // Iterate through the array 
+  // in each iteration, 
+  // -- difference = arr[idx] - int
+  // -- check if the rest of the array includes the difference number
+  // ----- if yes, return true
+  // ----- if  no, continue iteration 
+
+  for (let i = 0; i < array.length; i++) {
+    const element = array[i];
+
+  }
 
 }
 
 
-console.log(isWinningTicket([ ['ABC', 999], ['XY', 89] ]))
+// console.log(addChecker([ ['ABC', 999], ['XY', 89] ]))
 
 /*
 Given a string, we'll say that the front is the first 3 chars of the string.
@@ -51,3 +62,56 @@ front3('abc') → abcabcabc
 // } 
 
 // console.log(frontBack('ab'))
+
+
+let test = 'lleah';
+
+function findFirstUnique(str){
+
+  //get an object with a count for each string
+  //in the object look for the first key that has a value of 1
+  const strArr = str.split('');
+
+  const strObj = strArr.reduce((obj, char) => {
+   obj[char] ? obj[char]++ : obj[char] = 1
+   return obj;
+  }, {})
+
+  for (let key of Object.keys(strObj)){
+    if(strObj[key] === 1) return str.indexOf(key)
+  }
+}
+
+// function findFirstUnique(s) {
+//   let str = s.split('')
+//   let isUnique;
+//   let output = 0;
+//   for (let i = 0; i < str.length; i++) {
+//     const currentChar = str[i];
+  
+//     for (let j = 1; j < str.length; j++) {
+//       const nextChar = str[j];
+//       if (currentChar === nextChar) {
+//         isUnique = false;
+//         break;
+//       }
+//       else isUnique = true
+//     }
+
+//     if (isUnique) output = i
+//   }
+//   return output
+// }
+
+console.log(findFirstUnique(test))
+
+// loop1:
+// for (var i in set1) {
+//   loop2:
+//   for (var j in set2) {
+//     loop3:
+//     for (var k in set3) {
+//       break loop2;  // breaks out of loop3 and loop2
+//     }
+//   }
+// }

@@ -816,7 +816,7 @@ function toCamelCase(str) {
 
 ```
 
-### Challenge: LAST-multiply
+### Challenge: EXTRA-multiply
 
 **Difficulty:**  Intermediate
 
@@ -834,4 +834,31 @@ function multiply(num1, num2) {
     return total;
 }
 
+```
+
+### Challenge: EXTRA-return first unique char
+
+**Difficulty:**  Intermediate
+
+Prompt:
+
+> Write a function returns the index of the first unique character in a string
+
+
+```javascript
+function findFirstUniqueChar(str){
+  // Split the string into an array
+  const strArr = str.split('');
+
+  // Reduce the array into an object with the chars as keys, and their count as values
+  const strObj = strArr.reduce((obj, char) => {
+   obj[char] ? obj[char]++ : obj[char] = 1
+   return obj;
+  }, {})
+
+  // Iterate through the keys of the object, if the value for a given key is 1, then return the index of that key (char) from the original string.
+  for (let key of Object.keys(strObj)){
+    if(strObj[key] === 1) return str.indexOf(key)
+  }
+}
 ```
