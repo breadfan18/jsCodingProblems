@@ -100,6 +100,13 @@ function addList() {
   }
   return sum;
 }
+
+
+// ************ Using arguments and reduce ************
+function addList() {
+  // Convert arguments object into an array first, and then we can call reduce to handle it like this
+  return Array.prototype.slice.call(arguments).reduce((sum, num) => sum+= num, 0)
+}
 ```
 
 
