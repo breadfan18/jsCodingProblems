@@ -1,28 +1,48 @@
   /*
-  ### Challenge: 13-mumble
+  ### Challenge: 16-findHighestPriced
   
-  **Difficulty:** Intermediate
+  **Difficulty:**  Intermediate
   
   Prompt:
   
-  > Write a function called mumble that accepts a single string argument.
-  > The function should return a string that has each character repeated the number of times according 
-  > to its position within the string arg.  In addition, each repeated section of characters should be separated by a hyphen (-).
-  > Examples describe it best..
+  > Write a function named findHighestPriced that accepts a single array of objects.
+  > The objects contained in the array are guaranteed to have a price property holding a numeric value.
+  > The function should return the object in the array that has the largest value held in the price property.
+  > If there's a tie between two or more objects, return the first of those objects in the array.
+  > Return the original object, not a copy.
+  > Do not mutate the array being passed in.
   
   Examples:
   
-  mumble('X'); --> 'X'
-  mumble('abc'); --> 'a-bb-ccc'
-  mumble('121'); --> '1-22-111'
-  mumble('!A 2'); --> '!-AA>   -2222'
+  findHighestPriced([
+    { sku: 'a1', price: 25 },
+    { sku: 'b2', price: 5 },
+    { sku: 'c3', price: 50 },
+    { sku: 'd4', price: 10 }
+  ]);
+  --> { sku: 'c3', price: 50 }
+  
+  findHighestPriced([
+    { sku: 'a1', price: 25 },
+    { sku: 'b2', price: 50 },
+    { sku: 'c3', price: 50 },
+    { sku: 'd4', price: 10 }
+  ]);
+  --> { sku: 'b2', price: 50 }
   */
-  // Your solution for 13-mumble here:
+  // Your solution for 16-findHighestPriced here:
+  
 
-  function mumble(str) {  
-    let mumbled =  str.split('').reduce((output, char, idx) => output += `${char.repeat(idx + 1)}-`,'')
-    return mumbled.substring(0, mumbled.length - 1)
-  }
+function findHighestPriced(arr) {
+  const highestPrice = arr.reduce((highest, obj) => obj.price > highest ? obj.price : highest, 0)
+  return arr.find(obj => obj.price === highestPrice)
+}
 
-console.log(mumble('abc'))
+
+console.log(findHighestPriced([
+  { sku: 'a1', price: 25 },
+  { sku: 'b2', price: 50 },
+  { sku: 'c3', price: 50 },
+  { sku: 'd4', price: 10 }
+]))
 

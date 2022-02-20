@@ -549,7 +549,7 @@ Examples:
 ```javascript
 function findHighestPriced(objects) {
   let highest = 0;
-  objects.map((object) => {if (object.price > highest) highest = object.price;})
+  objects.map(object => if (object.price > highest) highest = object.price)
   return objects.find(object => object.price === highest);
 }
 
