@@ -1,27 +1,39 @@
-  /*
-  ### Challenge: 04-addList
+/*
+  ### Challenge: 06-range
   
-  **Difficulty:** Basic
+  **Difficulty:** basic
   
   Prompt:
   
-  > Write a function called addList that accepts any quantity of numbers as arguments, adds them together and returns the resulting sum.
-  > Assume all parameters will be numbers.
-  > If called with no arguments, return 0 (zero).
+  > Write a function called range that accepts two integers as arguments and returns an array of 
+  > integers starting with the first argument up to one less than the second argument.
+  > The range function must be called with the first argument less than or equal to the second argument, 
+  > otherwise return the string "First argument must be less than second".
   
   Examples:
   
-  add(1) --> 1
-  add(1,50,1.23) --> 52.23
-  add(7,-12) --> -5
+  range(1,4) --> [1,2,3]
+  range(-2, 3) --> [-2,-1,0,1,2]
+  range(1,1) --> []
+  range(5,2) --> "First argument must be less than second"
   */
-  // Your solution for 04-addList here:
-function addList() {
-  console.log(arguments);
+  // Your solution for 06-range here:
+function range(num1, num2) {
+  // If num1 is greater than num2, retrun the given string 
+  if(num1 > num2) return 'First argument must be less than second'
+  // Declare a new array variable
+  let arr = [];
+  // loop over starting loop with num1, ending less than num2, push to an array each value of i. 
+  for (let i = num1; i < num2; i++) {
+    arr.push(i)
+  }
 
-  return Array.prototype.slice.call(arguments).reduce((sum, num) => sum+= num, 0)
+  return arr;
 }
 
 
 
-console.log(addList(1,50,1.23))
+
+console.log(range(1,4))
+
+
