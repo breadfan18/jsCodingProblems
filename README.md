@@ -584,9 +584,7 @@ Examples:
 ```javascript
 function mapArray(arr, callback) {
     let newArr = [];
-    arr.forEach((element, idx) => {
-        newArr.push(callback(element, idx))
-    });    
+    arr.forEach((element, idx) => newArr.push(callback(element, idx)));    
     return newArr;
 }
 ```

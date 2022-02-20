@@ -1,48 +1,51 @@
+  
   /*
-  ### Challenge: 16-findHighestPriced
+  ### Challenge: 18-reduceArray
   
   **Difficulty:**  Intermediate
   
   Prompt:
   
-  > Write a function named findHighestPriced that accepts a single array of objects.
-  > The objects contained in the array are guaranteed to have a price property holding a numeric value.
-  > The function should return the object in the array that has the largest value held in the price property.
-  > If there's a tie between two or more objects, return the first of those objects in the array.
-  > Return the original object, not a copy.
-  > Do not mutate the array being passed in.
+  > The goal is of this ### Challenge is to write a function that performs the functionality of JavaScript's Array.prototype.reduce method.
+  > Write a function named reduceArray that accepts three arguments: 
+  > (1) an array; (2) a callback function; and (3) a value used as the initial value of the "accumulator".
+  > The reduceArray function should return whatever is returned by the callback function on the last iteration.
+  > The reduceArray function should iterate over each element in the array (first arg).  
+  > For each iteration, invoke the callback function (2nd arg), passing to it three arguments: 
+  > (1) the "accumulator", which is the value returned by the callback during the previous iteration; 
+  > (2) the  current element; and (3) the index of the current iteration.
+  > On the first iteration, provide the third argument provided to reduceArray as the first argument when invoking the callback, 
+  > then for subsequent iterations, provide the value returned by the callback during the previous iteration.
   
   Examples:
   
-  findHighestPriced([
-    { sku: 'a1', price: 25 },
-    { sku: 'b2', price: 5 },
-    { sku: 'c3', price: 50 },
-    { sku: 'd4', price: 10 }
-  ]);
-  --> { sku: 'c3', price: 50 }
+  reduceArray( [1, 2, 3], function(acc, n) {
+    return acc + n;
+  }, 0);
+  --> 6
   
-  findHighestPriced([
-    { sku: 'a1', price: 25 },
-    { sku: 'b2', price: 50 },
-    { sku: 'c3', price: 50 },
-    { sku: 'd4', price: 10 }
-  ]);
-  --> { sku: 'b2', price: 50 }
+  reduceArray( [1, 2, 3], function(acc, n, i) {
+    return acc + n + i;
+  }, 0);
+  --> 9
+  
+  reduceArray( ['Yes', 'No', 'Yes', 'Maybe'], function(acc, v) {
+    acc[v] = acc[v] ? acc[v] + 1 : 1;
+    return acc;
+  }, {} );
+  --> {"Yes": 2, "No": 1, "Maybe": 1}
   */
-  // Your solution for 16-findHighestPriced here:
-  
+  // Your solution for 18-reduceArray here:
+function reduceArray(arr, cb, init) {
+  arr.forEach((elem, idx) => {
+    init = cb(init, elem, idx)
+  });
 
-function findHighestPriced(arr) {
-  const highestPrice = arr.reduce((highest, obj) => obj.price > highest ? obj.price : highest, 0)
-  return arr.find(obj => obj.price === highestPrice)
+  return init
 }
 
 
-console.log(findHighestPriced([
-  { sku: 'a1', price: 25 },
-  { sku: 'b2', price: 50 },
-  { sku: 'c3', price: 50 },
-  { sku: 'd4', price: 10 }
-]))
+console.log(reduceArray([1, 2, 3], function(acc, n) {
+  return acc + n;
+}, 0))
 
