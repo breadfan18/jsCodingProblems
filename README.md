@@ -212,6 +212,12 @@ function reverseUpcaseString(string) {
   }
   return reversed.toUpperCase();
 }
+
+// *********** One liner using array functions *************
+function reverseUpcaseString(str) {
+  return str.split('').reverse().join('').toUpperCase();
+}
+
 ```
 
 ### Challenge: 08-removeEnds
