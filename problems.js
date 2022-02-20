@@ -16,7 +16,11 @@
   // Your solution for 06-range here:
 function reverseUpcaseString(str) {
   // We can either do a reverse loop and concat each char to a new string output. uppercasing each chat before adding
-  return str.split('').reverse().join('').toUpperCase()
+  let reversed = '';
+  for (let i = str.length-1; i >= 0; i--) {
+    reversed += str.charAt(i);
+  }
+  return reversed.toUpperCase()
 }
 
 

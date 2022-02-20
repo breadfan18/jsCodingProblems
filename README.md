@@ -204,13 +204,11 @@ Examples:
 > reverseUpcaseString("SEI Rocks!"); --> "!SKCOR IES" 
 
 ```javascript
-function reverseUpcaseString(string) {
-  let reversed = "";
-  for (let i = string.length; i >= 0; i--) {
-      let currentChar = string.charAt(i);
-      reversed += currentChar;
+function reverseUpcaseString(str) {
+  for (let i = str.length-1; i >= 0; i--) {
+    reversed += str.charAt(i);
   }
-  return reversed.toUpperCase();
+  return reversed.toUpperCase()
 }
 
 // *********** One liner using array functions *************
