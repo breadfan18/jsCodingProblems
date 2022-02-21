@@ -1,26 +1,38 @@
-// Write a function returns the index of the first unique character in a string
-
+  /*
+  ### Challenge: 26-toCamelCase
   
-  // Your solution for 20-isPrime here:
-
-function firstUnique(str) {
-  // first, split the chars into an array
-  // reduce the array into an object with the char as the key and it's count as a value
-  // Then we loop throug the object to finf the first char that has value > 1
-  // then we return the index of that char in the input string 
-
-  let reducedObj = str.split('').reduce((obj, char) => {
-    obj[char] ? obj[char]++ : obj[char] = 1
-    return obj;
-  }, {})
-
+  **Difficulty:**  Intermediate
   
-  for(let key in reducedObj){
-    if(reducedObj[key] === 1) return str.indexOf(key)
-  }
+  Prompt:
   
+  > Write a function called toCamelCase that accepts a single string as argument.
+  > The toCamelCase function should return the string as camel-cased, removing each _ or - 
+  > characters and capitalizing the character following the _ or -.
+  > If the string argument does not contain a "_" or a "-", return the same string.
+  `
+  Hints:
+  
+  > This is a great ### Challenge for using regular expressions combined with the String.replace method.
+  
+  Examples:
+  
+  toCamelCase( 'sei' ) // => 'sei'
+  toCamelCase( 'sei-rocks' ) // => 'seiRocks'
+  toCamelCase( 'banana_Turkey_potato' ) // => 'bananaTurkeyPotato'
+  toCamelCase( 'Mama-mia' ) // => 'MamaMia'
+  toCamelCase( 'A_b_c' ) // => 'ABC'
+  */
+  // Your solution for 26-toCamelCase here:
+
+function toCamelCase(str) {
+  // const words = str.split(/[-_]/g);
+  // const camelCased = words.slice(1, words.length).map(word => word.charAt(0).toUpperCase() + word.slice(1,word.length)).join('')
+  // return words[0] + camelCased
+
+  return str.replace(/[-_]\w/g, match => match.charAt(1).toUpperCase())
+
 }
 
 
-console.log(firstUnique('soosa'))
+console.log(toCamelCase('banana_Turkey_potato'))
 
