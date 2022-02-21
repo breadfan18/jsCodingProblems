@@ -1,39 +1,26 @@
-  /*
-  ### Challenge: 19-flatten
-  
-  **Difficulty:**  Intermediate
-  
-  Prompt:
-  
-  > Write a function named flatten that accepts a single array that may contain nested arrays and returns a new "flattened" array.
-  > A flattened array is an array that contains no nested arrays.
-  > Arrays maybe nested at any level.
-  > If any of the arrays have duplicate values those duplicate values should be present in the returned array.
-  > The values in the new array should maintain their ordering as shown in the examples below.
-  
-  Hint:
-  
-  > This assignment provides an excellent opportunity to use recursion (a function that calls itself).  It can also be solved by using an inner function.
-  
-  Examples:
-  
-  flatten( [1, [2, 3]] );
-  --> [1, 2, 3]  (a new array)
-  
-  flatten(  );
-  --> [1, 2, 3, 4, 1, 'a', 'b', 'c']
-  */
-  // Your solution for 19-flatten here:
+// Write a function returns the index of the first unique character in a string
 
-function flatten(arr) {
-  let flattenedArr = [];
-  arr.forEach(elem => {
-    if(Array.isArray(elem)) flattenedArr = flattenedArr.concat(flatten(elem))
-    else flattenedArr.push(elem)
-  });
-  return flattenedArr;
+  
+  // Your solution for 20-isPrime here:
+
+function firstUnique(str) {
+  // first, split the chars into an array
+  // reduce the array into an object with the char as the key and it's count as a value
+  // Then we loop throug the object to finf the first char that has value > 1
+  // then we return the index of that char in the input string 
+
+  let reducedObj = str.split('').reduce((obj, char) => {
+    obj[char] ? obj[char]++ : obj[char] = 1
+    return obj;
+  }, {})
+
+  
+  for(let key in reducedObj){
+    if(reducedObj[key] === 1) return str.indexOf(key)
+  }
+  
 }
 
 
-console.log(flatten([1, [2, [3, [4]]], 1, 'a', ['b', 'c']]))
+console.log(firstUnique('soosa'))
 

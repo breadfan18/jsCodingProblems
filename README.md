@@ -842,15 +842,23 @@ Prompt:
 > Write a function that multiplies two numbers without using the * operator
 
 ```javascript 
-function multiply(num1, num2) {
+function multiply(a, b) {
     // return ('i').repeat(num1).repeat(num2).length
-    let total = num1;
-    for (let i = 1; i < num2; i++) {
-        total += num1 
-    }
+    let total = 0;   
+    for (let i = 0; i < b; i++) {
+      total += a 
+    } 
     return total;
 }
 
+// ************ Cheating using repeat() ***********
+
+// So take a random string, repeat it a number of times and take that and then repeat b number of times.
+// Take the length and that will give you the multipiclation output.
+function multiply(a,b) {
+  return ('i').repeat(a).repeat(b).length
+}
+ 
 ```
 
 ### Challenge: EXTRA-return first unique char
