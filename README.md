@@ -818,7 +818,7 @@ function toCamelCase(str) {
   
     for (let i = 0; i < strSplit.length; i++) {
         if (i === 0) finalArr.push(strSplit[i]);
-        else {finalArr.push(strSplit[i].charAt(0).toUpperCase() + strSplit[i].slice(1));};
+        else {finalArr.push(strSplit[i].charAt(0).toUpperCase() + strSplit[i].slice(1))};
     }
     return finalArr.join('');
   }

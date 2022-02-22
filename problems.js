@@ -36,3 +36,20 @@ function toCamelCase(str) {
 
 console.log(toCamelCase('banana_Turkey_potato'))
 
+
+function findFirstUniqueChar(str){
+  // Count how many times each character repeats in the string and store that in an object
+  let charCount = str.split('').reduce((obj, char) => {
+    // check whether or not that key (char) already exists in the obj, 
+    // --- if yes, we want to incremeent the value
+    // --- if no, we want to set its value to 1
+    obj[char]  = obj[char] + 1 || 1
+    return obj
+  }, {})
+
+  // loop through the object and find the first char that has a value of 1
+  for (let key of Object.keys(charCount)){
+    if(charCount[key] === 1) return str.indexOf(key)
+  }
+}
+
