@@ -76,7 +76,6 @@ const test1 = test.map(entity => {
 
 const test2 = test.map(entity => {
     const foo = _.omitBy(entity.rem, _.identity)
-    console.log(foo);
     return {entityID: entity.entityID, nullProperties: foo}
 })
 
