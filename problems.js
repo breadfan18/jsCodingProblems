@@ -1,25 +1,23 @@
-  /*
-  ### Challenge: 13-mumble
-  
-  **Difficulty:** Intermediate
-  
-  Prompt:
-  
-  > Write a function called mumble that accepts a single string argument.
-  > The function should return a string that has each character repeated the number of times according to its position within the string arg.  
-  > In addition, each repeated section of characters should be separated by a hyphen (-).
-  > Examples describe it best..
-  
-  Examples:
-  
-  mumble('X'); --> 'X'
-  mumble('abc'); --> 'a-bb-ccc'
-  mumble('121'); --> '1-22-111'
-  mumble('!A 2'); --> '!-AA>   -2222'
-  */
-  // Your solution for 13-mumble here:
-function mumble(str) {
-    return str.split('').reduce((output, char, i) => output += `${char.repeat(i+1)}${i < str.length-1 ? '-' : ''}` , '');
+
+/*
+### Challenge: 14-fromPairs
+ 
+**Difficulty:** Intermediate
+ 
+Prompt:
+ 
+> Write a function named fromPairs that creates an object from an array containing nested arrays.
+> Each nested array will have two elements representing key/value pairs used to create key/value pairs in an object to be returned by the function.
+> If a key appears in multiple pairs, the rightmost pair should overwrite previous the previous entry in the object.
+ 
+Examples:
+ 
+fromPairs([ ['a', 1], ['b', 2], ['c', 3] ]) --> { a: 1, b: 2, c: 3 }
+fromPairs([ ['name', 'Sam"], ['age', 24], ['name', 'Sally'] ]) --> { name: "Sally", age: 24 }
+*/
+// Your solution for 14-fromPairs here:
+function fromPairs(arr) {
+
 }
 
-console.log(mumble('121'));
+console.log();
