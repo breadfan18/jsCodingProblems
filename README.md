@@ -440,10 +440,8 @@ function mumble(string) {
 }
 
 // *********** Using reduce *************
-
-function mumble(str) {  
-  let mumbled =  str.split('').reduce((output, char, idx) => output += `${char.repeat(idx + 1)}-`,'')
-  return mumbled.substring(0, mumbled.length - 1)
+function mumble(str) {
+    return str.split('').reduce((output, char, i) => output += `${char.repeat(i+1)}${i < str.length-1 ? '-' : ''}` , '');
 }
 ```
 
