@@ -73,6 +73,11 @@ function sumNumbers(numbers) {
   }
   return sum;
 }
+
+// Another solution using simple ternary and Array.reduce
+function sumNumbers(a) {
+    return (a.length === 0) ? 0 : a.reduce((sum, num) => (sum += num), 0);
+}
 ```
 
 
@@ -188,6 +193,11 @@ function range(int1, int2) {
       output = numArr;
   }
   return output;
+}
+
+// *********** One liner using Array.from *************
+function range(a, b) {
+    return a >= b ? "First argument must be less than second" : Array.from({length: b-a}, (_, i) => a + i )
 }
 ```
 
